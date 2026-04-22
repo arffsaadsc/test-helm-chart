@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "image": {
+      "properties": {
+        "pullPolicy": {
+          "default": "IfNotPresent",
+          "description": "Image pull policy",
+          "type": "string"
+        },
+        "repository": {
+          "default": "nginx",
+          "description": "Container image repository",
+          "type": "string"
+        },
+        "tag": {
+          "default": "latest",
+          "description": "Container image tag",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ingress": {
+      "properties": {
+        "className": {
+          "default": "nginx",
+          "description": "Ingress class name",
+          "type": "string"
+        },
+        "enabled": {
+          "default": false,
+          "description": "Enable the Ingress resource",
+          "type": "boolean"
+        },
+        "host": {
+          "default": "chart-example.local",
+          "description": "Ingress host",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "replicaCount": {
+      "default": 1,
+      "description": "Number of replicas",
+      "type": "integer"
+    },
+    "service": {
+      "properties": {
+        "port": {
+          "default": 80,
+          "description": "Service port",
+          "type": "integer"
+        },
+        "type": {
+          "default": "ClusterIP",
+          "description": "Service type (ClusterIP, NodePort, LoadBalancer)",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

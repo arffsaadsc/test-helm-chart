@@ -1,0 +1,12 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: nginx
+  tag: latest
+ingress:
+  className: nginx
+  enabled: false
+  host: chart-example.local
+replicaCount: 1
+service:
+  port: 80
+  type: ClusterIP
